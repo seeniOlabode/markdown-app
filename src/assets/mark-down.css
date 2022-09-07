@@ -1,0 +1,16 @@
+.app-heading-m {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+.app-heading-s {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+}
+
+.mark-down-code {
+  font-family: "Roboto Mono", monospace;
+}
