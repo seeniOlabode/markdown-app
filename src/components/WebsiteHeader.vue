@@ -3,8 +3,10 @@
     <button
       id="menu"
       class="h-full bg-mark-700 aspect-square flex items-center justify-center"
+      @click="menu.toggleMenu()"
     >
-      <img src="@/assets/icon-menu.svg" alt="" />
+      <img v-show="!menu.menuOpen" src="@/assets/icon-menu.svg" alt="" />
+      <img v-show="menu.menuOpen" src="@/assets/icon-close.svg" alt="" />
     </button>
     <div class="flex items-center w-full">
       <div class="pl-6 flex items-center w-2/4">
@@ -39,11 +41,15 @@
 <script>
 import ActionButton from "./shared/ActionButton.vue";
 
+import { mobileMenu } from "@/App.vue";
+
 export default {
   name: "WebsiteHeader",
   components: { ActionButton },
   data() {
-    return {};
+    return {
+      menu: mobileMenu,
+    };
   },
   methods: {
     test() {

@@ -1,28 +1,27 @@
 <template>
-  <main class="h-full">
-    <div class="bg-mark-200 flex items-center h-11 px-4">
-      <h3 class="app-heading-s text-mark-500">MARKDOWN</h3>
-      <action-button id="show-button" class="ml-auto">
-        <img src="@/assets/icon-show-preview.svg" alt="" />
-      </action-button>
+  <main class="h-full overflow-hidden dark:bg-mark-1000">
+    <div class="h-full overflow-hidden">
+      <user-input v-show="displayInput" />
+      <preview-vue v-show="displayPreview" />
     </div>
-    <user-input />
   </main>
 </template>
 
 <script>
-import ActionButton from "./shared/ActionButton.vue";
 import UserInput from "./UserInput.vue";
+import PreviewVue from "./Preview.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "MarkDown",
-  components: { ActionButton, UserInput },
+  components: { UserInput, PreviewVue },
+  computed: {
+    ...mapState({
+      displayPreview: (state) => state.markdown.displayPreview,
+      displayInput: (state) => state.markdown.displayInput,
+    }),
+  },
 };
 </script>
 
-<style>
-#show-button {
-  padding: 7px 0;
-  height: auto;
-}
-</style>
+<style></style>

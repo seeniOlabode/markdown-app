@@ -13,4 +13,233 @@
 
 .mark-down-code {
   font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.preview-container h1 {
+  font-family: Roboto Slab;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: 0px;
+  text-align: left;
+  @apply text-mark-700;
+}
+
+.preview-container h1 + p {
+  margin-top: 22px;
+}
+
+.preview-container h2 {
+  font-family: Roboto Slab;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 37px;
+  letter-spacing: 0px;
+  text-align: left;
+  @apply text-mark-700;
+}
+
+.preview-container h2:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container h3 {
+  font-family: Roboto Slab;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.preview-container h3:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container h4 {
+  font-family: Roboto Slab;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.preview-container h4 + p {
+  margin-top: 20px;
+}
+
+.preview-container h4:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container h5 {
+  font-family: Roboto Slab;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.preview-container h5:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container h6 {
+  font-family: Roboto Slab;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  @apply text-mark-orange;
+}
+
+.preview-container h6:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container p {
+  font-family: Roboto Slab;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-top: 20px;
+  @apply text-mark-500;
+}
+
+.preview-container ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+  font-family: Roboto Slab;
+  @apply font-normal;
+  font-size: 13px;
+  padding-left: 24px;
+}
+
+.preview-container ul {
+  padding-left: 24px;
+  list-style-type: none;
+  font-size: 13px;
+}
+
+.preview-container ul:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #e46643; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.preview-container ol:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container li {
+  @apply text-mark-500;
+}
+
+.preview-container li:not(:first-child) {
+  margin-top: 4px;
+}
+
+.preview-container blockquote {
+  font-family: Roboto Slab;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  @apply bg-mark-200 p-6 border-l-mark-orange border-l-4;
+  border-radius: 4px;
+}
+
+.preview-container blockquote:not(:first-child) {
+  margin-top: 20px;
+}
+
+.preview-container blockquote p:first-child {
+  margin-top: 0;
+}
+
+.preview-container blockquote p {
+  @apply font-bold text-mark-700 text-sm;
+  line-height: 24px;
+}
+
+.preview-container blockquote a {
+  text-decoration: underline;
+}
+
+.preview-container code {
+  font-family: Roboto Mono;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  @apply text-mark-700;
+}
+
+.preview-container pre {
+  padding: 24px;
+  @apply bg-mark-200;
+  border-radius: 4px;
+}
+
+.preview-container pre:not(:first-child) {
+  margin-top: 20px;
+}
+
+html.dark .preview-container {
+  /* display: none; */
+}
+
+html.dark p,
+html.dark li {
+  @apply text-mark-400;
+}
+
+.preview-container h1,
+.preview-container h2,
+.preview-container h3,
+.preview-container h4,
+.preview-container h5 {
+  @apply text-mark-700;
+}
+
+html.dark .preview-container h1,
+html.dark .preview-container h2,
+html.dark .preview-container h3,
+html.dark .preview-container h4,
+html.dark .preview-container h5 {
+  @apply dark:text-mark-100;
+}
+
+html.dark .preview-container p {
+  @apply dark:text-mark-400;
+}
+
+html.dark .preview-container blockquote {
+  @apply bg-mark-800 text-mark-100;
+}
+
+html.dark .preview-container blockquote p {
+  @apply text-mark-100;
+}
+
+html.dark .preview-container pre {
+  @apply bg-mark-800 text-mark-100;
+}
+
+html.dark .preview-container code {
+  @apply text-mark-100;
 }
