@@ -1,6 +1,6 @@
 <template>
   <main class="h-full overflow-hidden dark:bg-mark-1000">
-    <div class="h-full overflow-hidden">
+    <div id="app-holder" class="h-full overflow-hidden sm:grid">
       <user-input v-show="displayInput" />
       <preview-vue v-show="displayPreview" />
     </div>
@@ -24,4 +24,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#app-holder {
+  grid-template-columns: 1fr 1fr;
+}
+</style>

@@ -1,23 +1,30 @@
 <template>
-  <div class="h-full input-div-container">
+  <div class="h-full input-div-container grid">
     <div class="bg-mark-200 flex items-center h-11 px-4 dark:bg-mark-900">
       <h3 class="app-heading-s text-mark-500 dark:text-mark-400">MARKDOWN</h3>
-      <action-button @click="toggleMobile()" id="show-button" class="ml-auto">
+      <action-button
+        @click="toggleMobile()"
+        id="show-button"
+        class="ml-auto sm:hidden"
+      >
         <img src="@/assets/icon-show-preview.svg" alt="" />
       </action-button>
     </div>
     <textarea
-      class="w-full p-4 mark-down-code overflow-scroll mb-20 dark:bg-mark-1000 dark:text-mark-400"
+      class="w-full p-4 mark-down-code overflow-scroll mb-20 dark:bg-mark-1000 dark:text-mark-400 hide-scroll"
       name="MarkDownInput"
       id=""
       @input="updatePreview()"
       v-model="markdown"
       resize="false"
+      :disabled="menu.menuOpen"
     ></textarea>
   </div>
 </template>
 <script>
 import ActionButton from "./shared/ActionButton.vue";
+
+import { mobileMenu } from "@/App.vue";
 
 export default {
   name: "UserInput",
@@ -25,6 +32,7 @@ export default {
   data() {
     return {
       markdown: "",
+      menu: mobileMenu,
     };
   },
   methods: {
@@ -54,7 +62,6 @@ textarea {
 }
 
 .input-div-container {
-  display: grid;
   grid-template-rows: auto 1fr;
 }
 </style>

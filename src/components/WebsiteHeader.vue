@@ -19,13 +19,7 @@
         />
       </div>
       <div class="ml-auto flex items-center">
-        <action-button
-          class="flex items-center"
-          @button-click="test()"
-          buttonType="secondary"
-        >
-          <img width="18" src="@/assets/icon-delete.svg" alt="" />
-        </action-button>
+        <delete-component />
         <action-button
           @button-click="test()"
           class="ml-3 flex items-center"
@@ -40,12 +34,13 @@
 
 <script>
 import ActionButton from "./shared/ActionButton.vue";
+import DeleteComponent from "./DeleteComponent.vue";
 
 import { mobileMenu } from "@/App.vue";
 
 export default {
   name: "WebsiteHeader",
-  components: { ActionButton },
+  components: { ActionButton, DeleteComponent },
   data() {
     return {
       menu: mobileMenu,

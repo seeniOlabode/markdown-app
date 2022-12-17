@@ -118,14 +118,14 @@
   list-style-position: outside;
   font-family: Roboto Slab;
   @apply font-normal;
-  font-size: 13px;
+  font-size: 14px;
   padding-left: 24px;
 }
 
 .preview-container ul {
   padding-left: 24px;
   list-style-type: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .preview-container ul:not(:first-child) {
@@ -176,13 +176,17 @@
   line-height: 24px;
 }
 
+.preview-container a {
+  text-decoration: underline;
+}
+
 .preview-container blockquote a {
   text-decoration: underline;
 }
 
 .preview-container code {
   font-family: Roboto Mono;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0px;
@@ -221,11 +225,11 @@ html.dark .preview-container h2,
 html.dark .preview-container h3,
 html.dark .preview-container h4,
 html.dark .preview-container h5 {
-  @apply dark:text-mark-100;
+  @apply text-mark-100;
 }
 
 html.dark .preview-container p {
-  @apply dark:text-mark-400;
+  @apply text-mark-400;
 }
 
 html.dark .preview-container blockquote {

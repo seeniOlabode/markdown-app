@@ -12,7 +12,7 @@
 import WebsiteHeader from "./components/WebsiteHeader.vue";
 import MarkDown from "./components/MarkDown.vue";
 import MobileMenu from "./components/mobile/MobileMenu.vue";
-import { reactive } from "vue";
+import { reactive, computed } from "vue";
 
 export const mobileMenu = reactive({
   menuOpen: false,
@@ -27,10 +27,36 @@ export default {
   data() {
     return {
       menu: mobileMenu,
+      windowWidth: 0,
     };
   },
-  created() {
+  provide() {
+    return {
+      width: computed(() => this.windowWidth),
+    };
+  },
+  mounted() {
     this.$store.dispatch("fetchDefaultTheme");
+    this.onResize();
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+  },
+  methods: {
+    autoCloseMenu() {
+      console.log("click");
+      if (this.menu.menuOpen) {
+        this.menu.toggleMenu();
+      }
+    },
+    onResize() {
+      if (this.windowWidth < 640) {
+        // this.CLOSE_MOBILE_NAV();
+      }
+      this.windowWidth = window.innerWidth;
+
+      console.log("size-change");
+    },
   },
 };
 </script>

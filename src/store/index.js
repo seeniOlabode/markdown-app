@@ -15,6 +15,7 @@ const markdown = {
     preview: "",
     displayPreview: false,
     displayInput: true,
+    onlyPreview: true,
   },
   getters: {},
   mutations: {
