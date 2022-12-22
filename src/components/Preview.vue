@@ -36,11 +36,12 @@
         <img src="@/assets/icon-hide-preview.svg" alt="" />
       </action-button>
     </div>
-
-    <div
-      class="px-5 py-4 preview-container overflow-scroll mb-5 hide-scroll"
-      v-html="content"
-    ></div>
+    <div class="overflow-scroll hide-scroll">
+      <div
+        class="px-5 py-4 preview-container overflow-scroll mb-5 hide-scroll"
+        v-html="content"
+      ></div>
+    </div>
   </div>
 </template>
 

@@ -33,7 +33,7 @@ export default {
   components: { ActionButton, ModalComponent },
   data() {
     return {
-      showDeleteModal: true,
+      showDeleteModal: false,
     };
   },
   methods: {

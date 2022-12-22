@@ -65,7 +65,7 @@ export default {
 @import url("./assets/mark-down.css");
 
 #app {
-  @apply font-sans;
+  @apply font-sans dark:bg-mark-1000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;

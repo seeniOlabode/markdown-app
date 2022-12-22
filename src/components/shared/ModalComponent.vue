@@ -45,11 +45,17 @@ export default {
 }
 
 .preview-container {
-  min-width: 343px;
-  max-width: 400px;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 .preview-container p {
   font-weight: 300;
+}
+
+@media (min-width: 640px) {
+  .preview-container {
+    max-width: 400px;
+  }
 }
 </style>
