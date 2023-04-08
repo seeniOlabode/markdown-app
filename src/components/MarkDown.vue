@@ -30,6 +30,7 @@
             'dark:sm:bg-mark-600': displayInput,
             'sm:bg-mark-300': displayInput,
             'w-1': resizeMouseDown,
+            guide: !newVisit,
           },
         ]"
         @mousedown="resizeMouseDown = true"
@@ -62,6 +63,7 @@ export default {
       centerPosition: null,
       markOverlay: false,
       prevOverlay: false,
+      newVisit: JSON.parse(localStorage.getItem("mark-new-visit")),
     };
   },
   watch: {
@@ -72,10 +74,16 @@ export default {
         this.prevOverlay = false;
       }
     },
+    newVisit(value) {
+      if (value) {
+        localStorage.setItem("mark-new-visit", true);
+      }
+    },
   },
   methods: {
     handleResize($event) {
       if (this.resizeMouseDown) {
+        this.newVisit = true;
         this.centerPosition = {
           clientX: $event.clientX,
           screenWidth: window.innerWidth,
@@ -160,9 +168,8 @@ export default {
 /* #app-holder {
   grid-template-columns: 1fr 1px 1fr;
 } */
-
 .resize-div {
-  @apply active:bg-mark-orange-hover;
+  @apply active:bg-mark-orange;
 }
 
 div[id*="overlay"] {
@@ -172,5 +179,19 @@ div[id*="overlay"] {
   right: 0;
   bottom: 0;
   @apply bg-mark-orange-hover bg-opacity-20;
+}
+
+.guide {
+  animation: guideAnimation 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes guideAnimation {
+  from {
+    @apply bg-mark-orange;
+  }
+  to {
+  }
 }
 </style>

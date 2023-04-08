@@ -58,6 +58,9 @@ export default {
       console.log("size-change");
     },
   },
+  beforeUnmount() {
+    localStorage.setItem("mark-new-visit", true);
+  },
 };
 </script>
 
