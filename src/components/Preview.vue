@@ -1,14 +1,17 @@
 <template>
   <div
-    class="preview-div-container h-full overflow-hidden pb-14 grid"
+    class="preview-div-container h-full overflow-hidden pb-14 grid relative grow"
     :class="{
-      'sm:border-l': input,
-      'dark:sm:border-mark-600': input,
-      'sm:border-mark-300': input,
+      // 'sm:border-l': input,
+      // 'dark:sm:border-mark-600': input,
+      // 'sm:border-mark-300': input,
       'col-span-2': !input,
     }"
+    ref="preview"
   >
-    <div class="bg-mark-200 flex items-center h-11 px-4 dark:bg-mark-900">
+    <div
+      class="bg-mark-200 flex items-center h-11 px-4 dark:bg-mark-900 select-none"
+    >
       <h3 class="app-heading-s text-mark-500 dark:text-mark-400">PREVIEW</h3>
       <action-button
         @click="toggleMobile()"
@@ -42,6 +45,7 @@
         v-html="content"
       ></div>
     </div>
+    <slot></slot>
   </div>
 </template>
 

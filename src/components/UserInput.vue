@@ -1,6 +1,8 @@
 <template>
-  <div class="h-full input-div-container grid">
-    <div class="bg-mark-200 flex items-center h-11 px-4 dark:bg-mark-900">
+  <div class="h-full input-div-container grid relative grow" ref="userInput">
+    <div
+      class="bg-mark-200 flex items-center h-11 px-4 dark:bg-mark-900 select-none"
+    >
       <h3 class="app-heading-s text-mark-500 dark:text-mark-400">MARKDOWN</h3>
       <action-button
         @click="toggleMobile()"
@@ -19,6 +21,7 @@
       resize="false"
       :disabled="menu.menuOpen"
     ></textarea>
+    <slot></slot>
   </div>
 </template>
 <script>
